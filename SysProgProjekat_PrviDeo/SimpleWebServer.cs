@@ -22,7 +22,6 @@ public class SimpleWebServer
     {
         listener.Start();
         logger.Log($"Server pokrenut na adresi {url}");
-        logger.Log("Pritisnite Enter za izlaz...");
 
         while (true)
         {
