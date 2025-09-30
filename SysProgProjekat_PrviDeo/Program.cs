@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading;
+//using System.Configuration; zaboravio sam da sam definisao url vec u appconfig
 
 class Program
 {
@@ -18,7 +19,7 @@ class Program
             try
             {
                 Directory.CreateDirectory(rootDir);
-                logger.Log("Root direktorijum nije postojao, kreiran je. Molimo vas da ubacite fajlove/stavke u njega.");
+                logger.Log("Root direktorijum je kreiran.");
             }
             catch (Exception ex)
             {
@@ -27,7 +28,8 @@ class Program
             }
         }
 
-        string serverUrl = "http://localhost:5050/";
+        string serverUrl = "http://localhost:5050/"; //u principu ne mora da bude hardkodiran jer sam zaboravio da sam definisao vec u appconfig
+        //string serverUrl = System.ConfigurationManager.AppSettings["ServerUrl"];
 
         var cacheManager = new CacheManager();
         var requestHandler = new RequestHandler(cacheManager, logger, rootDir);

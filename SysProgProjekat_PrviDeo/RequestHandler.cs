@@ -33,7 +33,7 @@ public class RequestHandler
 
         if (cacheManager.TryGetValue(requestedFileName, out excelContent))
         {
-            logger.Log($"[INFO][Nit {threadId}] Fajl {requestedFileName} pronađen u kešu. Vraćam keširanu verziju.");
+            logger.Log($"[INFO][Nit {threadId}] Fajl {requestedFileName} pronađen u kešu. Keširana verzija.");
         }
         else
         {

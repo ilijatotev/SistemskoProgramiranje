@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Configuration;
 
 class Program
 {
@@ -28,6 +29,7 @@ class Program
         }
 
         string serverUrl = "http://localhost:5050/";
+        //string serverUrl = System.ConfigurationManager.AppSettings["ServerUrl"];
 
         var cacheManager = new CacheManager();
         var requestHandler = new RequestHandler(cacheManager, logger, rootDir);
